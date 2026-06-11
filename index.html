@@ -503,6 +503,19 @@ footer .frame{background:var(--ink);border-color:rgba(242,241,236,.18)}
   .rv,.rvw{opacity:1;transform:none;clip-path:none}
   .rvw .w{clip-path:none}
 }
+
+/* ================= PRINT ================= */
+@media print{
+  body::after{display:none}
+  .boot{clip-path:none;animation:none}
+  .rv,.rvw{opacity:1;transform:none}
+  .rvw .w{clip-path:none}
+  .hc-photo{break-inside:avoid;min-height:0}
+  .hc-photo img{
+    position:static;transform:none;width:100%;height:340px;max-width:100%;
+    object-fit:contain;object-position:50% 50%;background:var(--paper-2);
+  }
+}
 </style>
 <noscript><style>.rv,.rvw{opacity:1;transform:none}.rvw .w{clip-path:none}</style></noscript>
 </head>
