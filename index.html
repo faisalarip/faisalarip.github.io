@@ -1,1347 +1,1043 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>My Portofolio</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faisal Nur Arif — iOS Engineer</title>
+<meta name="description" content="Faisal Nur Arif — Experienced iOS Engineer in Jakarta. 5 years shipping production iOS across fintech and e-commerce: +178% GMV, $10.3M daily GMV.">
+<link rel="canonical" href="https://faisalarip.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Faisal Nur Arif — iOS Engineer">
+<meta property="og:description" content="Annual engineering report. 5 years of production iOS: +178% GMV, $10.3M daily GMV, 94–95% image payload reduction.">
+<meta property="og:url" content="https://faisalarip.github.io/">
+<meta property="og:image" content="https://faisalarip.github.io/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Faisal Nur Arif — iOS Engineer. Annual engineering report cover with headline figures.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://faisalarip.github.io/images/og-card.jpg">
+<meta name="twitter:title" content="Faisal Nur Arif — iOS Engineer">
+<meta name="twitter:description" content="Annual engineering report. 5 years of production iOS: +178% GMV, $10.3M daily GMV, 94–95% image payload reduction.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230026FF'/%3E%3Cpath d='M18 14h30v8H28v10h17v8H28v18h-10z' fill='%23F2F1EC'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ================= TOKENS ================= */
+:root{
+  --paper:#F2F1EC;
+  --paper-2:#ECEBE4;
+  --ink:#111111;
+  --ink-2:#52524C;
+  --blue:#0026FF;
+  --hair:rgba(17,17,17,.22);
+  --hair-soft:rgba(17,17,17,.10);
+  --frame-max:1408px;
+  --pad:clamp(16px,3.4vw,48px);
+  --ease:cubic-bezier(.65,0,.25,1);
+  --t:220ms;
+  --mono:"Spline Sans Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --grot:"Archivo",Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--grot);
+  font-size:16px;line-height:1.55;
+  color:var(--ink);
+  background:
+    linear-gradient(180deg,rgba(17,17,17,.025),rgba(17,17,17,0) 240px),
+    var(--paper);
+  -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+  overflow-x:hidden;
+}
+/* film grain */
+body::after{
+  content:"";position:fixed;inset:0;z-index:99;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:.05;mix-blend-mode:multiply;
+}
+::selection{background:var(--blue);color:var(--paper)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+img{display:block;max-width:100%}
+ul{list-style:none}
+.hero-grid>*,.xp-grid>*,.figs>*,.letter>*,.cap-row>*,.ft-grid>*{min-width:0}
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900"
-      rel="stylesheet"
-    />
+/* ================= FRAME ================= */
+.frame{
+  max-width:var(--frame-max);margin:0 auto;
+  border-left:1px solid var(--hair);border-right:1px solid var(--hair);
+  background:var(--paper);
+  position:relative;
+}
+.sec{border-bottom:1px solid var(--ink);position:relative}
+.pad{padding-left:var(--pad);padding-right:var(--pad)}
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
+/* mono micro-type */
+.m{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.m2{color:var(--ink-2)}
+.sq{display:inline-block;width:8px;height:8px;background:var(--blue);margin-right:8px;flex:none}
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/magnific-popup.css" />
+/* vertical rail label */
+.rail{
+  position:absolute;top:0;bottom:0;left:0;width:38px;
+  border-right:1px solid var(--hair-soft);
+  display:flex;align-items:flex-start;justify-content:center;padding-top:22px;
+}
+.rail span{
+  writing-mode:vertical-rl;font-family:var(--mono);font-size:11px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;
+}
+@media(max-width:900px){.rail{display:none}}
 
-    <link rel="stylesheet" href="css/aos.css" />
+/* ================= MASTHEAD ================= */
+.mast{
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+  border-bottom:1px solid var(--ink);
+  padding-top:14px;padding-bottom:14px;
+}
+.mast .mid{display:flex;align-items:center;gap:8px}
+@media(max-width:700px){.mast .mid{display:none}}
 
-    <link rel="stylesheet" href="css/ionicons.min.css" />
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  background-image:linear-gradient(90deg,var(--hair-soft) 1px,transparent 1px);
+  background-size:calc(100%/6) 100%;
+  background-position:-1px 0;
+}
+.hero-top{
+  display:flex;justify-content:space-between;gap:24px;
+  padding-top:clamp(12px,2vw,24px);
+}
+.kicker{display:flex;align-items:center;gap:10px}
+.kicker .m{font-size:12px}
+.h1{
+  font-weight:880;font-stretch:122%;
+  font-size:clamp(44px,11.6vw,158px);
+  line-height:.86;letter-spacing:-.025em;text-transform:uppercase;
+  padding-top:clamp(12px,2vw,26px);
+  padding-bottom:clamp(16px,2.4vw,34px);
+}
+.h1 .l{display:block}
+.h1 .l2{color:var(--blue)}
+.h1 .nw{white-space:nowrap}
+.h1 .dot{display:inline-block;width:.115em;height:.115em;background:var(--ink);margin-left:.08em}
+.hero-grid{
+  display:grid;border-top:1px solid var(--ink);
+  grid-template-columns:repeat(12,1fr);
+}
+@media(min-width:981px){.hero-grid>*{grid-row:1}}
+.hero-cell{padding:clamp(18px,2.4vw,30px) clamp(16px,2vw,28px)}
+.hc-role{grid-column:1/4;border-right:1px solid var(--hair);display:flex;flex-direction:column}
+.hc-role .big{
+  font-weight:800;font-stretch:118%;text-transform:uppercase;letter-spacing:-.01em;
+  font-size:clamp(22px,2.4vw,33px);line-height:1.02;margin-top:10px;margin-bottom:22px;
+}
+.hc-role .big em{font-style:normal;color:var(--blue)}
+.hc-stack{
+  margin-top:auto;padding-top:14px;border-top:1px solid var(--hair-soft);
+  display:flex;flex-direction:column;gap:8px;
+}
+.hc-sum{grid-column:4/8;border-right:1px solid var(--hair);display:flex;flex-direction:column}
+.hc-sum p{max-width:46ch;font-size:clamp(15px,1.15vw,16.5px);line-height:1.6;margin-top:10px}
+.hc-sum strong{font-weight:700}
+.hc-sum p{margin-bottom:22px}
+.hc-now{
+  margin-top:auto;padding-top:14px;border-top:1px solid var(--hair-soft);
+  display:flex;flex-direction:column;gap:8px;
+}
+.hc-kpi{grid-column:10/13;display:flex;flex-direction:column;text-align:right}
+.hc-kpi .hk{margin-top:12px;padding-top:12px;border-top:1px solid var(--hair-soft)}
+.hc-kpi .hk:first-of-type{border-top:none;padding-top:0;margin-top:12px}
+.hk-v{display:block;font-weight:880;font-stretch:124%;letter-spacing:-.03em;line-height:.92;font-size:clamp(36px,3.3vw,47px);color:var(--blue);white-space:nowrap}
+.hk-l{display:block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);margin-top:7px;line-height:1.6}
+.hk-l b{font-weight:600;color:var(--ink)}
+.hk-ref{color:var(--blue)}
+.hk-more{
+  margin-top:auto;padding-top:16px;
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink);text-decoration:none;
+}
+.hk-more .ar{color:var(--blue)}
+.hk-more:hover{color:var(--blue)}
+.hc-photo{grid-column:8/10;border-right:1px solid var(--hair);padding:0;position:relative;background:var(--paper-2);overflow:hidden;min-height:300px}
+.hc-photo img{
+  position:absolute;left:50%;top:-32%;transform:translateX(-50%);
+  height:175%;width:auto;max-width:none;
+  filter:grayscale(1) contrast(1.12) brightness(1.02);
+}
+@media(max-width:980px){
+  .hc-photo img{
+    position:static;transform:none;width:100%;height:min(36vh,330px);
+    object-fit:cover;object-position:50% 30%;
+  }
+}
+.hc-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  background:var(--ink);color:var(--paper);
+  padding:8px 12px;
+}
+.hc-photo figcaption .m{font-size:11px;letter-spacing:.06em;white-space:nowrap}
+@media(min-width:981px){.hc-photo figcaption .fc2{display:none}}
+@media(max-width:980px){
+  .hc-role{grid-column:1/7;border-right:1px solid var(--hair)}
+  .hc-sum{grid-column:7/13;border-right:none}
+  .hc-kpi{grid-column:1/13;border-top:1px solid var(--ink);display:block;text-align:left}
+  .hc-kpi .hk,.hc-kpi .hk:first-of-type{
+    display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    border-top:1px solid var(--hair-soft);margin-top:10px;padding-top:10px;
+  }
+  .hk-v{font-size:clamp(27px,4.4vw,36px)}
+  .hk-l{margin-top:0;text-align:right}
+  .hk-more{display:inline-block;margin-top:16px;padding-top:0}
+  .hc-photo{grid-column:1/13;border-right:none;border-top:1px solid var(--ink);min-height:0}
+}
+@media(max-width:640px){
+  .hc-role{grid-column:1/13;border-right:none;border-bottom:1px solid var(--hair)}
+  .hc-sum{grid-column:1/13}
+  .hk-v{font-size:clamp(25px,7vw,31px)}
+}
+/* contents strip */
+.toc{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  border-top:1px solid var(--ink);
+}
+.toc a{
+  text-decoration:none;display:flex;flex-direction:column;gap:14px;
+  padding:14px clamp(12px,1.6vw,22px) 16px;
+  border-right:1px solid var(--hair);
+  transition:background var(--t) var(--ease),color var(--t) var(--ease);
+}
+.toc a:last-child{border-right:none}
+.toc a:hover{background:var(--ink);color:var(--paper)}
+.toc a:hover .toc-n{color:var(--paper)}
+.toc-n{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em}
+.toc-t{font-weight:700;font-stretch:114%;text-transform:uppercase;font-size:clamp(11px,1.05vw,14px);letter-spacing:.02em}
+@media(max-width:760px){
+  .toc{grid-template-columns:repeat(3,1fr)}
+  .toc a{border-bottom:1px solid var(--hair)}
+  .toc a:nth-child(3n){border-right:none}
+  .toc a:nth-child(n+4){border-bottom:none}
+}
 
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
+/* ================= SECTION HEADER ================= */
+.shead{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+  border-bottom:1px solid var(--ink);
+  padding-top:clamp(26px,4vw,54px);padding-bottom:clamp(14px,1.8vw,22px);
+}
+.shead .num{
+  font-weight:880;font-stretch:125%;
+  font-size:clamp(44px,7vw,104px);line-height:.8;letter-spacing:-.02em;
+  color:var(--blue);
+}
+.shead .wrap{display:flex;align-items:flex-end;gap:clamp(14px,2.4vw,34px)}
+.shead h2{
+  font-weight:850;font-stretch:120%;text-transform:uppercase;
+  font-size:clamp(30px,5.2vw,76px);line-height:.84;letter-spacing:-.02em;
+}
+.shead .tag{padding-bottom:6px;text-align:right}
+@media(max-width:640px){.shead .tag{display:none}}
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-    <nav
-      class="navbar navbar-expand-lg navbar-light ftco_navbar ftco-navbar-light site-navbar-target"
-      id="ftco-navbar"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="index.html"><span>P</span>ortofolio</a>
-        <button
-          class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle"
-          type="button"
-          data-toggle="collapse"
-          data-target="#ftco-nav"
-          aria-controls="ftco-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="oi oi-menu"></span> Menu
-        </button>
+/* ================= 01 SUMMARY ================= */
+.letter{display:grid;grid-template-columns:repeat(12,1fr)}
+.letter-aside{
+  grid-column:1/4;border-right:1px solid var(--hair);
+  padding:clamp(20px,2.6vw,34px) clamp(16px,2vw,28px);
+  display:flex;flex-direction:column;gap:14px;
+}
+.letter-body{grid-column:4/13;padding:clamp(20px,2.6vw,34px) clamp(16px,2.4vw,40px)}
+.letter-body p{
+  font-size:clamp(19px,2.15vw,30px);line-height:1.38;font-weight:480;
+  letter-spacing:-.012em;max-width:46ch;
+}
+.letter-body p .hl{
+  background:linear-gradient(0deg,rgba(0,38,255,.14),rgba(0,38,255,.14));
+  box-shadow:0 0 0 2px rgba(0,38,255,.14);
+}
+.letter-body p strong{font-weight:740}
+.letter-foot{
+  margin-top:clamp(20px,2.6vw,34px);padding-top:14px;border-top:1px solid var(--hair);
+  display:flex;gap:28px;flex-wrap:wrap;
+}
+@media(max-width:760px){
+  .letter-aside{grid-column:1/13;border-right:none;border-bottom:1px solid var(--hair);flex-direction:row;flex-wrap:wrap;gap:18px}
+  .letter-body{grid-column:1/13}
+}
 
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item">
-              <a href="#home-section" class="nav-link"><span>Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#about-section" class="nav-link"><span>About</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#resume-section" class="nav-link"><span>Resume</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="#projects-section" class="nav-link"
-                ><span>Projects</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="#contact-section" class="nav-link"
-                ><span>Contact</span></a
-              >
-            </li>
-          </ul>
+/* ================= 02 KEY FIGURES ================= */
+.figs{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:var(--hair);
+}
+.fig{
+  background:var(--paper);padding:clamp(18px,2.2vw,30px) clamp(16px,2vw,28px) clamp(20px,2.4vw,32px);
+  display:flex;flex-direction:column;gap:clamp(22px,3.4vw,56px);
+  transition:background 160ms var(--ease),color 160ms var(--ease);
+  cursor:default;
+}
+.fig .top{display:flex;justify-content:space-between;align-items:center}
+.fig .v{
+  font-weight:880;font-stretch:124%;letter-spacing:-.03em;line-height:.9;
+  font-size:clamp(46px,5.4vw,84px);white-space:nowrap;
+}
+.fig .lb{font-size:13.5px;line-height:1.45;color:var(--ink-2);max-width:30ch}
+.fig .idx{color:var(--blue)}
+.fig:hover{background:var(--blue);color:var(--paper)}
+.fig:hover .lb,.fig:hover .idx{color:var(--paper)}
+.fig-notes{
+  border-top:1px solid var(--hair);
+  display:flex;gap:10px 28px;flex-wrap:wrap;align-items:baseline;
+  padding-top:14px;padding-bottom:16px;
+}
+.fig-notes p{
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.04em;
+  color:var(--ink-2);max-width:92ch;line-height:1.7;
+}
+.fig-notes p b{font-weight:600;color:var(--ink)}
+@media(max-width:980px){.figs{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+  .figs{grid-template-columns:1fr}
+  .fig{gap:14px}
+  .fig .v{font-size:clamp(52px,15vw,72px)}
+}
+
+/* ================= 03 EXPERIENCE ================= */
+.xp{border-bottom:1px solid var(--ink)}
+.xp:last-of-type{border-bottom:none}
+.xp-grid{display:grid;grid-template-columns:repeat(12,1fr)}
+.xp-aside{
+  grid-column:1/4;border-right:1px solid var(--hair);
+  padding:clamp(20px,2.6vw,32px) clamp(16px,2vw,28px) clamp(24px,3vw,40px);
+}
+.xp-aside .inner{position:sticky;top:18px;display:flex;flex-direction:column;gap:12px}
+.xp-idx{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em}
+.xp h3{
+  font-weight:830;font-stretch:118%;text-transform:uppercase;
+  font-size:clamp(24px,2.6vw,38px);line-height:.95;letter-spacing:-.015em;
+}
+.xp-role{font-weight:640;font-size:15px;margin-top:2px}
+.xp-blurb{font-size:13.5px;line-height:1.5;color:var(--ink-2);max-width:30ch}
+.xp-period{
+  font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.06em;
+  border:1px solid var(--ink);padding:6px 10px;align-self:flex-start;
+  background:var(--paper);
+}
+.xp-body{grid-column:4/13}
+.gline{
+  display:flex;align-items:center;gap:10px;
+  padding:14px clamp(16px,2.4vw,32px) 12px;
+  border-bottom:1px solid var(--hair);
+  background:var(--paper-2);
+}
+.xp-body .row{
+  display:grid;grid-template-columns:minmax(0,58ch) minmax(150px,1fr);
+  gap:18px;align-items:start;
+  padding:clamp(14px,1.8vw,20px) clamp(16px,2.4vw,32px);
+  border-bottom:1px solid var(--hair);
+  position:relative;
+}
+.xp-body .row:last-child{border-bottom:none}
+.xp-body .row::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--blue);
+  transition:width 160ms var(--ease);
+}
+.xp-body .row:hover::before{width:4px}
+.row p{font-size:15.5px;line-height:1.6;color:#26261F}
+.row p strong{font-weight:720;color:var(--ink)}
+.row .metric{
+  font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.05em;
+  color:var(--blue);text-align:right;text-transform:uppercase;
+  padding-top:3px;white-space:nowrap;
+}
+.row .metric:empty{display:none}
+.row .metric small{display:block;font-size:11px;color:var(--ink-2);font-weight:500;margin-top:4px;letter-spacing:.08em}
+@media(max-width:980px){
+  .xp-aside{grid-column:1/13;border-right:none;border-bottom:1px solid var(--hair)}
+  .xp-aside .inner{position:static;display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:start}
+  .xp-aside .inner .xp-idx{grid-column:1/3}
+  .xp-aside .inner .xp-period{grid-column:2;grid-row:2;justify-self:end}
+  .xp-aside .inner h3{grid-column:1;grid-row:2}
+  .xp-aside .inner .xp-role{grid-column:1/3}
+  .xp-aside .inner .xp-blurb{grid-column:1/3;max-width:60ch}
+  .xp-body{grid-column:1/13}
+}
+@media(max-width:640px){
+  .xp-body .row{grid-template-columns:1fr;gap:8px}
+  .row .metric{text-align:left;order:-1;padding-top:0;white-space:normal}
+  .row .metric small{display:inline;margin-left:8px}
+}
+@media(max-width:480px){
+  .row p{font-size:16px}
+}
+
+/* ================= 04 EDUCATION ================= */
+.edu .row{
+  display:grid;grid-template-columns:64px minmax(0,4fr) minmax(0,5fr) auto;
+  gap:18px;align-items:baseline;
+  padding:clamp(18px,2.2vw,26px) clamp(16px,2.4vw,32px);
+  border-bottom:1px solid var(--hair);
+}
+.edu .row:last-child{border-bottom:none}
+.edu h3{font-weight:800;font-stretch:114%;font-size:clamp(17px,1.7vw,23px);text-transform:uppercase;letter-spacing:-.01em;line-height:1.1}
+.edu .deg{font-size:14.5px;color:#26261F}
+.edu .deg span{display:block;font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;font-weight:600}
+.edu .per{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.05em;white-space:nowrap}
+@media(max-width:760px){
+  .edu .row{grid-template-columns:48px 1fr;gap:6px 14px}
+  .edu h3{grid-column:2}
+  .edu .deg{grid-column:2}
+  .edu .per{grid-column:2}
+}
+
+/* ================= 05 CAPABILITIES ================= */
+.cap-core{
+  border-bottom:1px solid var(--ink);
+  padding-top:clamp(22px,3vw,42px);padding-bottom:clamp(22px,3vw,42px);
+}
+.cap-big{
+  font-weight:870;font-stretch:122%;text-transform:uppercase;letter-spacing:-.022em;
+  font-size:clamp(33px,5.6vw,80px);line-height:.92;margin-top:14px;
+}
+.cap-big .d{color:var(--blue);font-weight:480;padding:0 .04em}
+.cap-mid{
+  font-weight:740;font-stretch:116%;text-transform:uppercase;letter-spacing:.005em;
+  font-size:clamp(15px,1.85vw,26px);line-height:1.25;margin-top:12px;color:var(--ink);
+}
+.cap-mid .d{color:var(--blue)}
+.cap-row{
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);
+  border-bottom:1px solid var(--hair);
+}
+.cap-row:last-child{border-bottom:none}
+.cap-row .cl{
+  padding:clamp(14px,1.8vw,20px) clamp(16px,2vw,28px);
+  border-right:1px solid var(--hair);
+  display:flex;gap:12px;align-items:baseline;
+}
+.cap-row .cl h3{font-weight:760;font-stretch:114%;font-size:clamp(13px,1.25vw,15.5px);text-transform:uppercase;letter-spacing:.015em;line-height:1.2}
+.cap-row .ci{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.08em}
+.cap-row .cv{
+  padding:clamp(14px,1.8vw,20px) clamp(16px,2.4vw,32px);
+  font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.05em;
+  text-transform:uppercase;line-height:2;color:#26261F;
+}
+.cap-row .cv .d{color:var(--blue);padding:0 .45em}
+@media(max-width:760px){
+  .cap-row{grid-template-columns:1fr}
+  .cap-row .cl{border-right:none;padding-bottom:0}
+  .cap-row .cv{padding-top:8px}
+}
+
+/* ================= FOOTER / CONTACT ================= */
+footer{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+footer .frame{background:var(--ink);border-color:rgba(242,241,236,.18)}
+.ft-top{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding-top:18px;padding-bottom:16px;
+  border-bottom:1px solid rgba(242,241,236,.25);
+}
+.ft-top .m2{color:#A3A29A}
+.ft-cta{padding-top:clamp(34px,5vw,72px);padding-bottom:clamp(30px,4.4vw,64px)}
+.ft-cta .m2{color:#A3A29A}
+.ft-mail{
+  display:block;text-decoration:none;
+  font-weight:870;font-stretch:120%;text-transform:uppercase;letter-spacing:-.025em;
+  font-size:clamp(23px,4.55vw,64px);line-height:.96;
+  margin-top:18px;overflow-wrap:break-word;
+}
+.ft-mail .at{color:var(--blue);background:var(--paper);padding:0 .06em}
+.ft-mail:hover .u{text-decoration:underline;text-decoration-thickness:.045em;text-underline-offset:.08em;text-decoration-color:var(--blue)}
+.ft-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(242,241,236,.25);
+}
+.ft-grid a,.ft-grid .cell{
+  text-decoration:none;padding:16px clamp(14px,1.8vw,24px) 18px;
+  border-right:1px solid rgba(242,241,236,.18);
+  border-bottom:1px solid rgba(242,241,236,.18);
+  display:flex;flex-direction:column;gap:10px;
+  transition:background 160ms var(--ease),color 160ms var(--ease);
+}
+@media(min-width:861px){
+  .ft-grid>*:nth-child(4n){border-right:none}
+  .ft-grid>*:nth-child(n+5){border-bottom:none}
+}
+.ft-grid .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#A3A29A;display:flex;align-items:center;justify-content:space-between}
+.ft-grid .v{font-weight:640;font-stretch:112%;font-size:clamp(13.5px,1.25vw,16.5px);letter-spacing:.01em;overflow-wrap:anywhere}
+.ft-grid a:hover{background:var(--blue);color:#fff}
+.ft-grid a:hover .k{color:rgba(255,255,255,.75)}
+.ft-bottom{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  border-top:1px solid rgba(242,241,236,.25);
+  padding-top:14px;padding-bottom:18px;
+}
+.ft-bottom .m{color:#A3A29A}
+.ft-bottom .colo{max-width:66ch;line-height:1.7;text-align:center}
+.ft-bottom .end{color:var(--paper)}
+@media(max-width:860px){.ft-bottom .colo{text-align:left;order:3}}
+@media(max-width:860px){
+  .ft-grid{grid-template-columns:repeat(2,1fr)}
+  .ft-grid>*:nth-child(2n){border-right:none}
+  .ft-grid>*:nth-child(n+7){border-bottom:none}
+}
+.arr{width:10px;height:10px;flex:none}
+.arr path{stroke:currentColor;stroke-width:1.6;fill:none}
+
+/* ================= MOTION ================= */
+.boot{clip-path:inset(0 0 100% 0);animation:wipe 420ms var(--ease) forwards;animation-delay:calc(var(--d,0)*1ms)}
+@keyframes wipe{to{clip-path:inset(0 0 -8% 0)}}
+.rv{opacity:0;transform:translateY(12px);transition:opacity 240ms var(--ease),transform 240ms var(--ease);transition-delay:calc(var(--d,0)*1ms)}
+.rv.in{opacity:1;transform:none}
+.rvw .w{display:inline-block;clip-path:inset(0 100% 0 0);transition:clip-path 300ms var(--ease);transition-delay:calc(var(--d,0)*1ms)}
+.rvw.in .w{clip-path:inset(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .boot{clip-path:none;animation:none}
+  .rv,.rvw{opacity:1;transform:none;clip-path:none}
+  .rvw .w{clip-path:none}
+}
+
+/* ================= PRINT ================= */
+@media print{
+  body::after{display:none}
+  .boot{clip-path:none;animation:none}
+  .rv,.rvw{opacity:1;transform:none}
+  .rvw .w{clip-path:none}
+  .hc-photo{break-inside:avoid;min-height:0}
+  .hc-photo img{
+    position:static;transform:none;width:100%;height:340px;max-width:100%;
+    object-fit:contain;object-position:50% 50%;background:var(--paper-2);
+  }
+}
+</style>
+<noscript><style>.rv,.rvw{opacity:1;transform:none}.rvw .w{clip-path:none}</style></noscript>
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- ============ MASTHEAD ============ -->
+  <div class="mast pad">
+    <span class="m boot" style="--d:0"><span class="sq" aria-hidden="true"></span>Annual Engineering Report</span>
+    <span class="m m2 mid boot" style="--d:60">Vol. 06 — Fiscal Years 2017 → 2026</span>
+    <span class="m boot" style="--d:120">Jakarta, Indonesia</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero sec">
+    <div class="hero-top pad">
+      <span class="kicker boot" style="--d:160"><span class="m">Prepared by the office of</span></span>
+      <span class="m m2 boot" style="--d:200">Ref. FNA—26 / iOS</span>
+    </div>
+    <h1 class="h1 pad">
+      <span class="l boot" style="--d:240">Faisal</span>
+      <span class="l l2 boot" style="--d:340">Nur <span class="nw">Arif<span class="dot" aria-hidden="true"></span></span></span>
+    </h1>
+    <div class="hero-grid">
+      <div class="hero-cell hc-role boot" style="--d:430">
+        <span class="m m2">Position held</span>
+        <p class="big">Experienced<br>iOS Engineer<br><em>5 yrs</em></p>
+        <div class="hc-stack">
+          <span class="m m2">Core instruments</span>
+          <span class="m">Swift · SwiftUI · UIKit</span>
         </div>
       </div>
+      <div class="hero-cell hc-sum boot" style="--d:490">
+        <span class="m m2">Statement of practice</span>
+        <p>Shipping production iOS across <strong>fintech, e-commerce, HR, and education</strong> — with a documented record of moving GMV, conversion, and engagement at the scale of Tokopedia (ByteDance) and Tuntun Sekuritas.</p>
+        <div class="hc-now">
+          <span class="m"><span class="sq" aria-hidden="true"></span>Currently — Tuntun Sekuritas</span>
+          <span class="m m2">Previously — Tokopedia (ByteDance)</span>
+        </div>
+      </div>
+      <div class="hero-cell hc-kpi boot" style="--d:540">
+        <span class="m m2">Headline figures</span>
+        <div class="hk">
+          <span class="hk-v">+178%</span>
+          <span class="hk-l"><b>GMV, Deals page</b> — <span class="hk-ref">Fig 2.1</span></span>
+        </div>
+        <div class="hk">
+          <span class="hk-v">$10.3M</span>
+          <span class="hk-l"><b>Daily GMV driven</b> — <span class="hk-ref">Fig 2.2</span></span>
+        </div>
+        <div class="hk">
+          <span class="hk-v">94–95%</span>
+          <span class="hk-l"><b>Image payload cut</b> — <span class="hk-ref">Fig 2.3</span></span>
+        </div>
+        <a class="hk-more" href="#figures">Full schedule — Sec. 02 <span class="ar" aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-cell hc-photo boot" style="--d:580">
+        <img src="images/photo_profile_800.jpg" alt="Black and white portrait of Faisal Nur Arif, arms crossed" width="800" height="1422">
+        <figcaption><span class="m">Fig. 0 — The Engineer</span><span class="m fc2">B/W, Jakarta</span></figcaption>
+      </figure>
+    </div>
+    <nav class="toc boot" style="--d:640" aria-label="Report contents">
+      <a href="#summary"><span class="toc-n">01</span><span class="toc-t">Summary</span></a>
+      <a href="#figures"><span class="toc-n">02</span><span class="toc-t">Key Figures</span></a>
+      <a href="#experience"><span class="toc-n">03</span><span class="toc-t">Experience</span></a>
+      <a href="#education"><span class="toc-n">04</span><span class="toc-t">Education</span></a>
+      <a href="#capabilities"><span class="toc-n">05</span><span class="toc-t">Capabilities</span></a>
+      <a href="#contact"><span class="toc-n">A.</span><span class="toc-t">Contact</span></a>
     </nav>
-    <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container">
-        <div
-          class="row no-gutters slider-text js-fullheight justify-content-center align-items-center"
-        >
-          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
-            <div class="text text-center">
-              <span class="subheading">Hey! I am</span>
-              <h1>Faisal Nur Arif</h1>
-              <h2>
-                I'm a
-                <span
-                  class="txt-rotate"
-                  data-period="1000"
-                  data-rotate='[ "Experienced iOS Engineer" ]'
-                ></span>
-              </h2>
-            </div>
-          </div>
+  </header>
+
+  <main>
+
+  <!-- ============ 01 SUMMARY ============ -->
+  <section class="sec" id="summary" aria-label="Summary">
+    <div class="rail"><span>01 — Letter from the Engineer</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">01</span></span>
+        <h2 class="rv" style="--d:80">Summary</h2>
+      </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 01 / 06 — Letter</span>
+    </div>
+    <div class="letter">
+      <div class="letter-aside">
+        <span class="m m2 rv">Reporting period</span>
+        <span class="m rv" style="--d:60">2017 — Present</span>
+        <span class="m m2 rv" style="--d:120">Sectors served</span>
+        <span class="m rv" style="--d:180">Fintech · E-commerce · HR · Education</span>
+      </div>
+      <div class="letter-body">
+        <p class="rv" style="--d:120">An experienced iOS Engineer with <span class="hl">5 years of experience</span> shipping production mobile applications across fintech, e-commerce, HR, and education. Proven track record of <strong>driving measurable impact on GMV, conversion, and engagement at scale</strong>, with deep expertise in Swift, SwiftUI, UIKit, and modern iOS architectures — MVVM, VIPER, TCA, Clean Architecture.</p>
+        <div class="letter-foot rv" style="--d:200">
+          <span class="m"><span class="sq" aria-hidden="true"></span>Currently — Tuntun Sekuritas</span>
+          <span class="m m2">Previously — Tokopedia (ByteDance)</span>
         </div>
       </div>
-      <div class="mouse">
-        <a href="#" class="mouse-icon">
-          <div class="mouse-wheel">
-            <span class="ion-ios-arrow-round-down"></span>
-          </div>
-        </a>
+    </div>
+  </section>
+
+  <!-- ============ 02 KEY FIGURES ============ -->
+  <section class="sec" id="figures" aria-label="Key figures">
+    <div class="rail"><span>02 — Audited by production traffic</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">02</span></span>
+        <h2 class="rv" style="--d:80">Key Figures</h2>
       </div>
-    </section>
-
-    <section
-      class="ftco-about img ftco-section ftco-no-pt ftco-no-pb"
-      id="about-section"
-    >
-      <div class="container">
-        <div class="row d-flex no-gutters">
-          <div class="col-md-6 col-lg-6 d-flex">
-            <div class="img-about img d-flex align-items-stretch">
-              <div class="overlay"></div>
-              <div
-                class="img d-flex align-self-stretch align-items-center"
-                style="background-image: url(images/photo_profile_new.jpg)"
-              ></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-6 pl-md-5 py-5">
-            <div class="row justify-content-start pb-3">
-              <div class="col-md-12 heading-section ftco-animate">
-                <h1 class="big">About</h1>
-                <h2 class="mb-4">About Me</h2>
-                <p>
-                  I am an iOS Software Engineer with 5 years of experience in
-                  developing high-quality mobile applications. My expertise
-                  spans industries such as e-commerce, education, HR, and
-                  retail. I have a proven track record of improving app
-                  performance, user engagement, and business metrics.
-                </p>
-                <ul class="about-info mt-4 px-md-0 px-2">
-                  <li class="d-flex">
-                    <span>Name:</span> <span>Faisal Nur Arif</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Address:</span>
-                    <span
-                      >Jl. Pancoran Bar. VII D 19-15, RT.9/RW.1, Pancoran, Kec.
-                      Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota
-                      Jakarta 12780</span
-                    >
-                  </li>
-                  <li class="d-flex">
-                    <span>Zip code:</span> <span>12780</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Email:</span> <span>faisalarip10@gmail.com</span>
-                  </li>
-                  <li class="d-flex">
-                    <span>Phone: </span> <span>+62-857-9110-1337</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-                <p class="mb-4">
-                  <span class="number" data-number="8">0</span>
-                  <span>Project complete</span>
-                </p>
-                <p>
-                  <a
-                    href="https://drive.google.com/drive/folders/1KjXT4dbljHjbuaQk1Z4BXbfuSHO2_tqH?usp=sharing"
-                    class="btn btn-primary py-3 px-3"
-                    >Download CV</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 02 / 06 — Selected results</span>
+    </div>
+    <div class="figs">
+      <div class="fig rv" style="--d:0">
+        <div class="top"><span class="m idx">Fig 2.1</span><span class="m m2">Growth</span></div>
+        <div class="v">+178%</div>
+        <p class="lb">GMV from Content Switcher on Tokopedia Deals page</p>
       </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <nav id="navi">
-              <ul>
-                <li><a href="#page-1">Education</a></li>
-                <li><a href="#page-2">Experience</a></li>
-                <li><a href="#page-3">Skills</a></li>
-                <!-- <li><a href="#page-4">Awards</a></li> -->
-              </ul>
-            </nav>
-          </div>
-          <div class="col-md-9">
-            <div id="page-1" class="page one">
-              <h2 class="heading">Education</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Aug 2025 - Aug 2027</span>
-                  <h2>Pursuing Bachelor's Degree in Computer Science</h2>
-                  <span class="position">Binus University • Jakarta, Indonesia</span>
-                </div>
-              </div>
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Jan 2019 - Dec 2022</span>
-                  <h2>Associate Of Communications A.Md.I. Kom Information Technology</h2>
-                  <span class="position">Universitas Dinamika (STIKOM Surabaya) • Surabaya, Indonesia</span>
-                </div>
-              </div>
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Jan 2016 - Dec 2019</span>
-                  <h2>Computer Engineering And Networking</h2>
-                  <span class="position">Vocational High School</span>
-                </div>
-              </div>
-            </div>
-
-            <div id="page-2" class="page two">
-              <h2 class="heading">Experience</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Aug 2024 - Present</span>
-                  <h2>Software Engineer - iOS</h2>
-                  <span class="position">ByteDance Ltd.</span>
-                  <p>
-                    - Integrated ByteIO Tracker SDK into the iOS app (Swift, UIKit, MVVM), enabling 90% GMV attribution tracking and enhancing business metric visibility
-                    <br />
-                    - Implemented ByteIO Tracker across product cards in the Discovery module (Swift, RxSwift), contributing to Flash Sales performance: +0.56% orders per user, +0.28% daily active UV, +5.7% homepage orders per user
-                    <br />
-                    - Content Mirroring (Feed Profile) – Developed mirrored feed profile feature (Swift, UIKit, MVVM, custom video player). Expanded content supply: distributable videos grew from 47k → 12.5M, daily new video publications 2.7k → 128k. Boosted engagement: CTR +11.6%, GPM +64.6%. Improved UX & performance: VV +42.3%, UV CVR +0.05pt; video player first-frame success rate +25.9%, load time -22.9%
-                    <br />
-                    - FPS Optimization: Migrated feed profile VCs from Texture → UIKit, improving FPS +1.8% and halving sample size, reducing technical debt while aligning with iOS best practices
-                    <br />
-                    - Discovery Refactor: Refactored DiscoveryParentViewModel API fetching mechanism, making codebase more readable, maintainable, and scalable
-                    <br />
-                    Skills: Swift, UIKit, MVVM, RxSwift, Custom Video Player, Performance Optimization, API Integration
-                  </p>
-                </div>
-              </div>
-
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Aug 2023 - Aug 2024</span>
-                  <h2>Software Engineer - iOS</h2>
-                  <span class="position">PT. Tokopedia </span>
-                  <p>
-                    - Delivered Partial Order Fulfillment (Swift, UIKit, MVVM, REST API) enabling sellers to manage inventory efficiently, reducing delays and improving customer satisfaction
-                    <br />
-                    - Built and optimized the Daily Benefit feature (Swift, VIPER, RxSwift, GRPC), incorporating coupon bundles and milestones: +2.66% main orders, +3.45% conversion rate, +3.56% repurchase rate, improving engagement across multiple scenarios
-                    <br />
-                    - Designed and shipped Content Switcher (UIKit, AsyncDisplayKit, RxSwift) on the Deals page: Boosted GMV by 178%, Paid orders by 73%, and user clicks by 53%
-                    <br />
-                    - Enhanced accessibility by expanding Daily Benefit entrance to bottom navigation (Swift, UIKit, Texture, MVVM), improving new user retention by 5%
-                    <br />
-                    - Led GRPC bandwidth optimization (Swift, Networking layer refactor), reducing backend usage by 45% (7.62 → 4.47 RPS)
-                    <br />
-                    - Bedug Berhadiah (Ramadan Event Feature) – Delivered Surprise Giftbox on Promo Hari Ini page (UIKit, RxSwift, MVVM). Increased iOS event metrics: GMV/user +3.74%, main orders/user +1.06%, CO +0.77%, AOV +2.56%, Payment Penetration +0.52%
-                    <br />
-                    - Misi Belanja (Daily Benefit Quest) – Designed and shipped multiple iterations of shopping quest feature (Swift, GRPC, VIPER). Consistently improved business metrics: GMV/user +1.46%, main orders/user +0.75%, RPD7 +0.83%, RPR30 +0.47%, voucher penetration +1.15%. Delivered sustainable ROI: ROAS 13.97, ROI2 1.22, short-term ROI 0.64
-                    <br />
-                    Skills: Swift, UIKit, VIPER, MVVM, RxSwift, GRPC, AsyncDisplayKit, REST API, Performance Optimization
-                  </p>
-                </div>
-              </div>
-
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Aug 2022 - Aug 2023</span>
-                  <h2>iOS Developer</h2>
-                  <span class="position">Skolla</span>
-                  <p>
-                    - Developed intuitive UI with VIPER architecture + UIKit, improving readability and accessibility, resulting in +10% user engagement
-                    <br />
-                    - Implemented Live Class, Live Chat, and Consultation (WebSocket, RxSwift, UIKit), improving user engagement by 12%
-                    <br />
-                    Skills: Swift, UIKit, VIPER, WebSocket, RxSwift
-                  </p>
-                </div>
-              </div>
-
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Sep 2021 - Mar 2022</span>
-                  <h2>iOS Developer Intern</h2>
-                  <span class="position">PT Mid Solusi Nusantara (Mekari)</span>
-                  <p>
-                    - Built and shipped Mekari Chat & Talenta apps (Swift, Firebase, REST API), increasing user engagement by 7% and reducing app bugs by 23%
-                    <br />
-                    Skills: Swift, Firebase, REST API, MVP-C, MVVM, UIKit
-                  </p>
-                </div>
-              </div>
-
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Feb 2021 - Sep 2021</span>
-                  <h2>iOS Developer</h2>
-                  <span class="position">Pt Kasir Pintar</span>
-                  <p>
-                    - Optimized SQLite queries in Swift, reducing offline data retrieval time by 40%, improving transaction reporting
-                    <br />
-                    - Integrated AsyncDisplayKit (Texture) for rendering, reducing UI load times by 9%, enhancing retention
-                    <br />
-                    Skills: Swift, SQLite, AsyncDisplayKit (Texture), UIKit, REST APIs
-                  </p>
-                </div>
-              </div>
-
-              <div class="resume-wrap d-flex ftco-animate">
-                <div
-                  class="icon d-flex align-items-center justify-content-center"
-                >
-                  <span class="flaticon-ideas"></span>
-                </div>
-                <div class="text pl-3">
-                  <span class="date">Oct 2017 - Dec 2017</span>
-                  <h2>Information Technology Support Technician</h2>
-                  <span class="position">Pt Pln</span>
-                  <p>
-                    - Achieved a 5% reduction in IT support ticket resolution time through implementation of proactive maintenance procedures
-                    <br />
-                    Skills: IT Support, Network Administration, System Maintenance
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div id="page-3" class="page three">
-              <h2 class="heading">Skills</h2>
-              <div class="resume-wrap d-flex ftco-animate">
-                <section>
-                  <h2>Skills</h2>
-                  <ul>
-                    <li>
-                      <strong>iOS Development:</strong> Xcode, VIPER, UIKit, TCA, Swift, SQLite, RxSwift, MVVM, Jenkins, AsyncDisplayKit (Texture), RxCocoa
-                    </li>
-                    <li>
-                      <strong>Front End:</strong> Firebase, Javascript, Bootstrap, HTML, CSS
-                    </li>
-                    <li>
-                      <strong>Backend:</strong> Java, PHP, RESTful APIs, GQL (GraphQL)
-                    </li>
-                    <li>
-                      <strong>Soft Skills:</strong> Team player, Bias for Action, Deliver Result, Result Oriented, Detail Oriented, Curious Oriented
-                    </li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-
-            <!-- <div id="page-4" class="page four">
-						<h2 class="heading">Awards</h2>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2019</span>
-								<h2>Runner-up Mobile Application Development</h2>
-								<span class="position">Udayana University</span>
-								<p>My team made Nutrisiku App. Nutrisiku App is application for calculate our nutririon every day</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Top 5 LeaderShip Exellence Winner</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Top 4 Web Tester</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-									into your mouth.</p>
-							</div>
-						</div>
-						<div class="resume-wrap d-flex ftco-animate">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="flaticon-ideas"></span>
-							</div>
-							<div class="text pl-3">
-								<span class="date">2014-2015</span>
-								<h2>Art &amp; Creative Director</h2>
-								<span class="position">Cambridge University</span>
-								<p>A small river named Duden flows by their place and supplies it with the necessary
-									regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-									into your mouth.</p>
-							</div>
-						</div>
-					</div> -->
-          </div>
-        </div>
+      <div class="fig rv" style="--d:60">
+        <div class="top"><span class="m idx">Fig 2.2</span><span class="m m2">Revenue</span></div>
+        <div class="v">$10.3M</div>
+        <p class="lb">daily GMV driven via Bonus Cashback entry point (69.13% of total)</p>
       </div>
-    </section>
-
-    <section class="ftco-section" id="services-section">
-      <!-- <div class="container-fluid px-md-5">
-			<div class="row justify-content-center py-5 mt-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Services</h1>
-					<h2 class="mb-4">Services</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-analysis"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Web Design</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-flasks"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Website Developing</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-ideas"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">REST API Developer</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-innovation"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">App Developing</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-ux-design"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Branding</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-4 text-center d-flex ftco-animate">
-					<a href="#" class="services-1 shadow">
-						<span class="icon">
-							<i class="flaticon-idea"></i>
-						</span>
-						<div class="desc">
-							<h3 class="mb-5">Product Strategy</h3>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div> -->
-    </section>
-
-    <section class="ftco-section ftco-project" id="projects-section">
-      <div class="container-fluid px-md-0">
-        <div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">My Projects</h2>
-            <p>Here are some overview of the projects that I have developed</p>
-          </div>
-        </div>
-
-        <h2 class="h5 font-weight-bold text-center mb-4">Inspire Creativity</h2>
-        <p class="text-center">
-          An iOS app I built and shipped to the App Store, designed to spark and
-          organize creative ideas.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <a
-            href="https://apps.apple.com/us/app/inspire-creativity/id6778075297"
-            class="mr-2"
-            target="_blank"
-            rel="noopener"
-            >App Store</a
-          >
-        </h2>
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">
-          3D LiDAR Scanner: Room Measure
-        </h2>
-        <p class="text-center">
-          An iOS app I built and shipped to the App Store that uses LiDAR to
-          scan rooms and capture accurate 3D measurements.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <a
-            href="https://apps.apple.com/us/app/3d-lidar-scanner-room-measure/id6780503121"
-            class="mr-2"
-            target="_blank"
-            rel="noopener"
-            >App Store</a
-          >
-        </h2>
-        <br />
-        <br />
-        <br />
-
-        <h2 class="h5 font-weight-bold text-center mb-4">GameCatalogue</h2>
-        <p class="text-center">
-          #ios developer learning path from idcamp x dicoding 2020 <br />I
-          learned to make an intermediate level application and a lot of
-          knowledge that I've got, such as parseJSON from API, Persistant data
-          with Core data and User defaults, learning about main threads, and
-          etc.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <a
-            href="https://github.com/faisalarip/SubmissionAdvanced"
-            class="mr-2"
-            >Github</a
-          >
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games1-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games2-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games3-min.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games4-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games5-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/games6-min.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">TravelsApp</h2>
-        <p class="text-center">
-          Catalogue travels app using Advanced Collection View, such as Diffable
-          Data Source and Compositional Layout.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <a href="https://github.com/faisalarip/TravelsApp" class="mr-2"
-            >Github</a
-          >
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel1-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel2-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel3-min.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel4-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel5-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/travel6-min.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">MyChatApps</h2>
-        <p class="text-center">
-          This apps created about a how to use and integrity firebase as
-          real-time database, Login using FacebookSDK, Google Sign In and learn
-          more about Apple Map
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <a href="https://github.com/faisalarip/MyChatApps" class="mr-2"
-            >Github</a
-          >
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps1-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps2-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps3-min.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps4-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps5-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/chatapps6-min.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">Kasir Pintar Pro</h2>
-        <p class="text-center">
-          Kasir Pintar Pro apps is a POS (Point of Sale) application that has
-          several services such as recording unlimited sales transactions,
-          Managing Stock of Goods, Customer Management & Business Reports.
-          Fulfill business needs from managing sales to business reports
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <!-- <a href="https://github.com/faisalarip/MyChatApps" class="mr-2">GitLab</a> -->
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin1-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin2-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin3-min.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin4-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin5-min.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/kaspin6-min.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">Mekari Chats</h2>
-        <p class="text-center">
-          Mekari Chat is a chat apps for business that is safe, private, and
-          integrated with Talenta's human resources information system (HRIS).
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <!-- <a href="https://github.com/faisalarip/MyChatApps" class="mr-2">GitLab</a> -->
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat-1.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat-2.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat-3.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat-4.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/mekarichat-5.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">Talenta</h2>
-        <p class="text-center">
-          Talenta apps is an HR application with a comprehensive HRD system;
-          help companies manage payroll & employee attendance more easily.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <!-- <a href="https://github.com/faisalarip/MyChatApps" class="mr-2">GitLab</a> -->
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta-1.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta-2.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta-3.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta-4.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/talenta-5.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">Finansialku</h2>
-        <p class="text-center">
-          Finansialku apps is a application that serves to help manage finances
-          and plan family finances. You can use the Finansialku app, to: Create
-          a budget. Recording finances.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <!-- <a href="https://github.com/faisalarip/MyChatApps" class="mr-2">GitLab</a> -->
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku-1.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku-2.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku-3.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku-4.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/finansialku-5.jpg)"
-            ></div>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <br />
-        <h2 class="h5 font-weight-bold text-center mb-4">Skolla</h2>
-        <p class="text-center">
-          Skolla is an online learning application that can help the learning
-          process for students. Available for elementary, middle school, high
-          school students and even alumni.
-        </p>
-        <h2 class="h6 font-weight-bold text-center">
-          <!-- <a href="https://github.com/faisalarip/MyChatApps" class="mr-2">GitLab</a> -->
-        </h2>
-        <br />
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview1.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview2.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview3.jpg)"
-            ></div>
-          </div>
-
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview4.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview5.jpg)"
-            ></div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="project img ftco-animate d-flex justify-content-center align-items-center"
-              style="background-image: url(images/skolla-overview6.jpg)"
-            ></div>
-          </div>
-        </div>
+      <div class="fig rv" style="--d:120">
+        <div class="top"><span class="m idx">Fig 2.3</span><span class="m m2">Performance</span></div>
+        <div class="v">94–95%</div>
+        <p class="lb">average image payload reduction with TTImageViewUIKit</p>
       </div>
-    </section>
-
-    <!-- <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container-fluid px-md-5">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="4">0</strong>
-							<span>Awards</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="20">0</strong>
-							<span>Complete Projects</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="20">0</strong>
-							<span>Happy Customers</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18 shadow">
-						<div class="text">
-							<strong class="number" data-number="1000">0</strong>
-							<span>Cups of coffee</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-    <!-- <section class="ftco-section" id="blog-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Blog</h1>
-					<h2 class="mb-4">Our Blog</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://medium.com/@nashirjamali/berkenalan-dengan-syntax-javascript-modern-es6-98c44f6c4d4" class="block-20" style="background-image: url('images/image_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://medium.com/@nashirjamali/berkenalan-dengan-syntax-javascript-modern-es6-98c44f6c4d4">Berkenalan dengan syntax Javascript modern (ES6)</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a>
-							</h3>
-							<div class="d-flex align-items-center mb-3 meta">
-								<p class="mb-0">
-									<span class="mr-2">Sept. 12, 2019</span>
-									<a href="#" class="mr-2">Admin</a>
-									<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-								</p>
-							</div>
-							<p>A small river named Duden flows by their place and supplies it with the necessary
-								regelialia.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-    <!-- <section class="ftco-section ftco-hireme img" style="background-image: url(images/bg_1.jpg)">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>I'm <span>Available</span> for freelancing</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-					<p class="mb-0"><a href="https://api.whatsapp.com/send?phone=0895335192297" class="btn btn-primary py-3 px-5">Hire me</a></p>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
-    <section
-      class="ftco-section contact-section ftco-no-pb"
-      id="contact-section"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>
-              Fell free to contact me, you can ask anything to find out more
-              about me
-            </p>
-          </div>
-        </div>
-        <div class="row d-flex justify-content-center contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box text-center p-4 shadow">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-phone2"></span>
-              </div>
-              <div>
-                <h3 class="mb-4">Phone Number</h3>
-                <p><a href="tel://085791101337">+62 85791101337</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-8 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box text-center p-4 shadow">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-paper-plane"></span>
-              </div>
-              <div>
-                <h3 class="mb-4">Email Address</h3>
-                <p>
-                  <a href="mailto:faisalarip10@gmail.com"
-                    >faisalarip10@gmail.com</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box text-center p-4 shadow">
-              <div
-                class="icon d-flex align-items-center justify-content-center"
-              >
-                <span class="icon-phone2"></span>
-              </div>
-              <div>
-                <h3 class="mb-4">WhatsApp</h3>
-                <p><a href="https://wa.link/8wy0tx">+62 85791101337</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="fig rv" style="--d:0">
+        <div class="top"><span class="m idx">Fig 2.4</span><span class="m m2">Infrastructure</span></div>
+        <div class="v">45%</div>
+        <p class="lb">gRPC backend bandwidth reduction (7.62 → 4.47 RPS)</p>
       </div>
-    </section>
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>My Portofolio - Faisal Nur Arif.</p>
-              <ul
-                class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
-              >
-                <li class="ftco-animate">
-                  <a href="https://github.com/faisalarip"
-                    ><span class="icon-github"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="https://www.linkedin.com/in/faisalarif/"
-                    ><span class="icon-linkedin"></span
-                  ></a>
-                </li>
-                <li class="ftco-animate">
-                  <a href="https://www.instagram.com/faisal_hanyuk/"
-                    ><span class="icon-instagram"></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Home</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>About</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Services</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Projects</a
-                  >
-                </li>
-                <li>
-                  <a href="#"
-                    ><span class="icon-long-arrow-right mr-2"></span>Contact</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">My Location</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li>
-                    <span class="icon icon-map-marker"></span
-                    ><span class="text"
-                      >Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
-                      12780</span
-                    >
-                  </li>
-                  <li>
-                    <a href="tel://085791101337"
-                      ><span class="icon icon-phone"></span
-                      ><span class="text">+62 85791101337</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="mailto:faisalarip10@gmail.com"
-                      ><span class="icon icon-envelope"></span
-                      ><span class="text">faisalarip10@gmail.com</span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              All rights reserved | This template is made with
-              <i class="icon-heart color-danger" aria-hidden="true"></i> by
-              <a href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
+      <div class="fig rv" style="--d:60">
+        <div class="top"><span class="m idx">Fig 2.5</span><span class="m m2">Content</span></div>
+        <div class="v">12.5M</div>
+        <p class="lb">distributable videos, up from 47k, via Content Mirroring</p>
       </div>
-    </footer>
+      <div class="fig rv" style="--d:120">
+        <div class="top"><span class="m idx">Fig 2.6</span><span class="m m2">Tenure</span></div>
+        <div class="v">5</div>
+        <p class="lb">years shipping production iOS apps</p>
+      </div>
+    </div>
+    <div class="fig-notes pad rv">
+      <span class="m m2">Notes to the figures</span>
+      <p><b>Figs 2.1, 2.2, 2.4, 2.5</b> recorded in production at Tokopedia (ByteDance), FY 2023–25. <b>Fig 2.3</b> recorded at Tuntun Sekuritas, FY 2025–26. <b>Fig 2.6</b> cumulative across the engagements itemized in Sec. 03, where each figure appears as a line item.</p>
+    </div>
+  </section>
 
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle
-          class="path-bg"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke="#eeeeee"
-        />
-        <circle
-          class="path"
-          cx="24"
-          cy="24"
-          r="22"
-          fill="none"
-          stroke-width="4"
-          stroke-miterlimit="10"
-          stroke="#F96D00"
-        />
-      </svg>
+  <!-- ============ 03 EXPERIENCE ============ -->
+  <section class="sec" id="experience" aria-label="Experience">
+    <div class="rail"><span>03 — Statement of operations</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">03</span></span>
+        <h2 class="rv" style="--d:80">Experience</h2>
+      </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 03 / 06 — Six engagements, in order</span>
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
+    <!-- 3.1 Tuntun -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.1 — Current</span>
+            <h3 class="rv" style="--d:40">Tuntun Sekuritas</h3>
+            <p class="xp-role rv" style="--d:80">Software Engineer — iOS</p>
+            <span class="xp-period rv" style="--d:120">10/2025 — Present</span>
+            <p class="xp-blurb rv" style="--d:160">Indonesian securities &amp; investment platform for retail stock trading.</p>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="row rv">
+            <p>Act as core engineer to migrate the app from a monolithic codebase to a <strong>modular architecture using UIKit and VIP</strong> (View-Interactor-Presenter), improving code ownership, build times, and scalability across feature teams.</p>
+            <span class="metric"></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Designed and built <strong>reusable SwiftUI and UIKit components</strong> — dynamic tooltip system with full-width positioning, custom spring-animated tab bars, congratulations popups, campaign mission/reward interfaces, and a Market Radar timeline UI — adopted across multiple product areas to improve visual consistency and reduce dependency on third-party libraries.</p>
+            <span class="metric"></span>
+          </div>
+          <div class="row rv" style="--d:100">
+            <p>Designed and shipped the <strong>Sector feature</strong>, enabling users to browse and analyze stocks grouped by market sector (e.g., Finance, Technology, Energy), improving stock discovery and supporting thematic investment decisions.</p>
+            <span class="metric"></span>
+          </div>
+          <div class="row rv" style="--d:150">
+            <p>Built <strong>TTImageViewUIKit</strong>, a custom UIKit image component that reduced image payload size by an average of 94–95% (e.g., 816 KB → 27 KB, 302 KB → 5 KB, 131 KB → 3 KB) — significantly lowering network consumption, reducing main-thread pressure for smoother scrolling on image-heavy screens like Exclusive Research (thousands of images), and cutting memory usage on long lists. Added a toggleable in-app debug overlay (green = cached, red = uncached) for quick cache inspection.</p>
+            <span class="metric">−94–95% payload<small>816 KB → 27 KB</small></span>
+          </div>
+        </div>
+      </div>
+    </article>
 
-    <script src="js/main.js"></script>
-  </body>
+    <!-- 3.2 Tokopedia -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.2</span>
+            <h3 class="rv" style="--d:40">Tokopedia (ByteDance)</h3>
+            <p class="xp-role rv" style="--d:80">Software Engineer — iOS</p>
+            <span class="xp-period rv" style="--d:120">08/2023 — 10/2025</span>
+            <p class="xp-blurb rv" style="--d:160">Indonesian technology company with a mission to democratize commerce through technology. Twelve line items, filed under three accounts.</p>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="gline rv"><span class="sq" aria-hidden="true"></span><h4 class="m">Account A — Growth &amp; Revenue</h4></div>
+          <div class="row rv">
+            <p>Designed and shipped <strong>Content Switcher</strong> on the Deals page (UIKit, AsyncDisplayKit, RxSwift): +178% GMV, +73% paid orders, +53% user clicks.</p>
+            <span class="metric">+178% GMV<small>+73% paid orders</small></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Implemented <strong>Bonus Cashback</strong> homepage entry point (Swift, UIKit, TCA), driving up to $10.3M daily GMV (69.13% of total) and +$2.7M in bonus-cashback revenue (+0.45%).</p>
+            <span class="metric">$10.3M / day<small>69.13% of GMV</small></span>
+          </div>
+          <div class="row rv" style="--d:100">
+            <p>Built and optimized <strong>Daily Benefit</strong> (Swift, VIPER, RxSwift, gRPC) with coupon bundles and milestones: +2.66% main orders/u, +3.45% CO, +3.56% repurchase rate (RPD7).</p>
+            <span class="metric">+2.66% orders/u<small>+3.56% RPD7</small></span>
+          </div>
+          <div class="row rv" style="--d:150">
+            <p>Delivered <strong>Bedug Berhadiah</strong> (Ramadan Surprise Giftbox, UIKit/RxSwift/MVVM): +3.74% GMV/user, +1.06% main orders/user, +2.56% AOV.</p>
+            <span class="metric">+3.74% GMV/user<small>+2.56% AOV</small></span>
+          </div>
+          <div class="row rv" style="--d:200">
+            <p>Shipped <strong>Misi Belanja</strong> shopping-quest feature (Swift, gRPC, VIPER) across iterations: +1.46% GMV/user, +0.75% main orders/user, ROAS 13.97, ROI2 1.22.</p>
+            <span class="metric">ROAS 13.97<small>+1.46% GMV/user</small></span>
+          </div>
+
+          <div class="gline rv"><span class="sq" aria-hidden="true"></span><h4 class="m">Account B — Content &amp; Product</h4></div>
+          <div class="row rv">
+            <p>Developed <strong>Content Mirroring</strong> for Feed Profile (Swift, UIKit, MVVM, custom video player): distributable videos 47k → 12.5M, daily publications 2.7k → 128k, CTR +11.6%, GPM +64.6%, first-frame success +25.9%, load time −22.9% (1.16s → 0.89s).</p>
+            <span class="metric">47k → 12.5M<small>GPM +64.6%</small></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Shipped <strong>Partial Order Fulfillment</strong> (Swift, UIKit, MVVM, REST API), enabling sellers to manage inventory more efficiently and reducing fulfillment delays.</p>
+            <span class="metric"></span>
+          </div>
+          <div class="row rv" style="--d:100">
+            <p>Expanded <strong>Daily Benefit entry point</strong> to bottom navigation (Swift, UIKit, Texture, MVVM), improving new-user retention by 5%.</p>
+            <span class="metric">+5% retention<small>New users</small></span>
+          </div>
+
+          <div class="gline rv"><span class="sq" aria-hidden="true"></span><h4 class="m">Account C — Platform &amp; Performance</h4></div>
+          <div class="row rv">
+            <p>Integrated <strong>ByteIO Tracker</strong> into the iOS app (Phase 1 deployment), achieving 90%+ GMV attribution and significantly improving traceability of gross merchandise value.</p>
+            <span class="metric">90%+ attribution<small>Phase 1</small></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Led <strong>gRPC bandwidth optimization</strong> via networking-layer refactor, reducing backend usage by 45% (7.62 → 4.47 RPS).</p>
+            <span class="metric">−45% bandwidth<small>7.62 → 4.47 RPS</small></span>
+          </div>
+          <div class="row rv" style="--d:100">
+            <p>Migrated <strong>Feed Profile view controllers from Texture → UIKit</strong>, improving FPS +1.8% and halving sample size (66 → 38), reducing tech debt and aligning with iOS best practices.</p>
+            <span class="metric">+1.8% FPS<small>66 → 38 sample</small></span>
+          </div>
+          <div class="row rv" style="--d:150">
+            <p>Refactored <strong>DiscoveryParentViewModel</strong> API-fetching mechanism for improved readability, maintainability, and scalability without regressions.</p>
+            <span class="metric"></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3.3 Skolla -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.3</span>
+            <h3 class="rv" style="--d:40">Skolla</h3>
+            <p class="xp-role rv" style="--d:80">iOS Developer</p>
+            <span class="xp-period rv" style="--d:120">08/2022 — 08/2023</span>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="row rv">
+            <p>Developed intuitive UI with <strong>VIPER + UIKit</strong>, improving readability and accessibility and lifting user engagement by +10%.</p>
+            <span class="metric">+10% engagement<small>Accessibility</small></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Implemented <strong>Live Class, Live Chat, and Consultation</strong> features (WebSocket, RxSwift, UIKit), improving user engagement by +12%.</p>
+            <span class="metric">+12% engagement<small>Realtime</small></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3.4 Mekari -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.4</span>
+            <h3 class="rv" style="--d:40">PT Mid Solusi Nusantara (Mekari)</h3>
+            <p class="xp-role rv" style="--d:80">iOS Developer Intern</p>
+            <span class="xp-period rv" style="--d:120">09/2021 — 03/2022</span>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="row rv">
+            <p>Built and shipped <strong>Mekari Chat and Talenta</strong> apps (Swift, Firebase, REST API), increasing user engagement by 7% and reducing app bugs by 23%.</p>
+            <span class="metric">−23% bugs<small>+7% engagement</small></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3.5 Kasir Pintar -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.5</span>
+            <h3 class="rv" style="--d:40">PT Kasir Pintar</h3>
+            <p class="xp-role rv" style="--d:80">iOS Developer</p>
+            <span class="xp-period rv" style="--d:120">02/2021 — 09/2021</span>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="row rv">
+            <p>Optimized <strong>SQLite queries</strong> in Swift, reducing offline data retrieval time by 40% and improving transaction reporting.</p>
+            <span class="metric">−40% retrieval<small>Offline data</small></span>
+          </div>
+          <div class="row rv" style="--d:50">
+            <p>Integrated <strong>AsyncDisplayKit (Texture)</strong> for rendering, reducing UI load times by 9% and enhancing retention.</p>
+            <span class="metric">−9% load time<small>Rendering</small></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3.6 PLN -->
+    <article class="xp">
+      <div class="xp-grid">
+        <div class="xp-aside">
+          <div class="inner">
+            <span class="xp-idx rv">Entry 3.6</span>
+            <h3 class="rv" style="--d:40">PT PLN</h3>
+            <p class="xp-role rv" style="--d:80">IT Support Technician</p>
+            <span class="xp-period rv" style="--d:120">10/2017 — 12/2017</span>
+          </div>
+        </div>
+        <div class="xp-body">
+          <div class="row rv">
+            <p>Reduced IT support <strong>ticket resolution time</strong> by 5% through proactive maintenance procedures.</p>
+            <span class="metric">−5% resolution<small>Support ops</small></span>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div class="fig-notes pad rv" style="border-top:1px solid var(--ink)">
+      <span class="m m2">Notes to Sec. 03</span>
+      <p>Figures quoted in the right-hand column are production results recorded during each engagement; line items without a recorded figure carry none. Headline results cross-referenced as <b>Figs 2.1–2.6</b> in Sec. 02.</p>
+    </div>
+  </section>
+
+  <!-- ============ 04 EDUCATION ============ -->
+  <section class="sec edu" id="education" aria-label="Education">
+    <div class="rail"><span>04 — Credentials on file</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">04</span></span>
+        <h2 class="rv" style="--d:80">Education</h2>
+      </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 04 / 06 — Three institutions</span>
+    </div>
+    <div class="row rv">
+      <span class="m idx" style="color:var(--blue)">4.1</span>
+      <h3>Binus University, Jakarta</h3>
+      <p class="deg">Bachelor's Degree in Computer Science (in progress)</p>
+      <span class="per">08/2025 — 12/2027</span>
+    </div>
+    <div class="row rv" style="--d:60">
+      <span class="m idx" style="color:var(--blue)">4.2</span>
+      <h3>Universitas Dinamika (STIKOM Surabaya)</h3>
+      <p class="deg">Associate Degree in Computer Science<span>GPA 3.62</span></p>
+      <span class="per">08/2019 — 08/2022</span>
+    </div>
+    <div class="row rv" style="--d:120">
+      <span class="m idx" style="color:var(--blue)">4.3</span>
+      <h3>Vocational High School</h3>
+      <p class="deg">Computer Engineering and Networking</p>
+      <span class="per">01/2016 — 12/2019</span>
+    </div>
+  </section>
+
+  <!-- ============ 05 CAPABILITIES ============ -->
+  <section class="sec skills" id="capabilities" aria-label="Capabilities">
+    <div class="rail"><span>05 — Instruments of the practice</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">05</span></span>
+        <h2 class="rv" style="--d:80">Capabilities</h2>
+      </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 05 / 06 — Tooling inventory</span>
+    </div>
+    <div class="cap-core pad">
+      <span class="m rv"><span style="color:var(--blue)">5.1</span> <span class="m2">— Core stack, in production daily</span></span>
+      <p class="cap-big rv" style="--d:60">Swift<span class="d" aria-hidden="true"> / </span>SwiftUI<span class="d" aria-hidden="true"> / </span>UIKit</p>
+      <p class="cap-mid rv" style="--d:140">MVVM <span class="d" aria-hidden="true">·</span> VIPER <span class="d" aria-hidden="true">·</span> TCA <span class="d" aria-hidden="true">·</span> Clean Architecture</p>
+    </div>
+    <div class="cap-row">
+      <div class="cl rv"><span class="ci">5.2</span><h3>Reactive &amp; Data</h3></div>
+      <p class="cv rv" style="--d:60">RxSwift<span class="d" aria-hidden="true">·</span>RxCocoa<span class="d" aria-hidden="true">·</span>Combine<span class="d" aria-hidden="true">·</span>SQLite<span class="d" aria-hidden="true">·</span>Core Graphics<span class="d" aria-hidden="true">·</span>SnapKit<span class="d" aria-hidden="true">·</span>AsyncDisplayKit (Texture)</p>
+    </div>
+    <div class="cap-row">
+      <div class="cl rv"><span class="ci">5.3</span><h3>Networking &amp; APIs</h3></div>
+      <p class="cv rv" style="--d:60">REST<span class="d" aria-hidden="true">·</span>gRPC<span class="d" aria-hidden="true">·</span>GraphQL<span class="d" aria-hidden="true">·</span>WebSocket</p>
+    </div>
+    <div class="cap-row">
+      <div class="cl rv"><span class="ci">5.4</span><h3>Tooling &amp; Delivery</h3></div>
+      <p class="cv rv" style="--d:60">Xcode<span class="d" aria-hidden="true">·</span>Jenkins<span class="d" aria-hidden="true">·</span>Firebase<span class="d" aria-hidden="true">·</span>CleverTap<span class="d" aria-hidden="true">·</span>Adjust SDK<span class="d" aria-hidden="true">·</span>Git<span class="d" aria-hidden="true">·</span>Claude Code / AI-assisted workflows</p>
+    </div>
+    <div class="cap-row">
+      <div class="cl rv"><span class="ci">5.5</span><h3>Beyond iOS</h3></div>
+      <p class="cv rv" style="--d:60">JavaScript<span class="d" aria-hidden="true">·</span>HTML<span class="d" aria-hidden="true">·</span>CSS<span class="d" aria-hidden="true">·</span>Bootstrap<span class="d" aria-hidden="true">·</span>Java<span class="d" aria-hidden="true">·</span>PHP</p>
+    </div>
+    <div class="cap-row">
+      <div class="cl rv"><span class="ci">5.6</span><h3>Practice</h3></div>
+      <p class="cv rv" style="--d:60">Team player<span class="d" aria-hidden="true">·</span>Bias for action<span class="d" aria-hidden="true">·</span>Deliver results<span class="d" aria-hidden="true">·</span>Detail oriented<span class="d" aria-hidden="true">·</span>Curious mindset</p>
+    </div>
+  </section>
+
+  <!-- ============ 06 SHIPPED TO THE APP STORE ============ -->
+  <section class="sec edu" id="apps" aria-label="Apps on the App Store">
+    <div class="rail"><span>06 — Shipped to the App Store</span></div>
+    <div class="shead pad">
+      <div class="wrap">
+        <span class="num rvw"><span class="w">06</span></span>
+        <h2 class="rv" style="--d:80">On the App Store</h2>
+      </div>
+      <span class="m m2 tag rv" style="--d:140">Sec. 06 / 06 — Built &amp; published</span>
+    </div>
+    <div class="row rv">
+      <span class="m idx" style="color:var(--blue)">6.1</span>
+      <h3><a href="https://apps.apple.com/us/app/inspire-creativity/id6778075297" rel="noopener" target="_blank">Inspire Creativity</a></h3>
+      <p class="deg">A personal iOS app designed to spark and organize creative ideas</p>
+      <a class="per" href="https://apps.apple.com/us/app/inspire-creativity/id6778075297" rel="noopener" target="_blank">App Store ↗</a>
+    </div>
+    <div class="row rv" style="--d:60">
+      <span class="m idx" style="color:var(--blue)">6.2</span>
+      <h3><a href="https://apps.apple.com/us/app/3d-lidar-scanner-room-measure/id6780503121" rel="noopener" target="_blank">3D LiDAR Scanner: Room Measure</a></h3>
+      <p class="deg">LiDAR-powered room scanning with accurate 3D measurement on iOS</p>
+      <a class="per" href="https://apps.apple.com/us/app/3d-lidar-scanner-room-measure/id6780503121" rel="noopener" target="_blank">App Store ↗</a>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<!-- ============ APPENDIX / CONTACT ============ -->
+<footer id="contact">
+  <div class="frame">
+    <div class="ft-top pad">
+      <h2 class="m" style="margin:0"><span class="sq" aria-hidden="true"></span>Appendix A — Contact</h2>
+      <span class="m m2">Filed from Jakarta, Indonesia</span>
+    </div>
+    <div class="ft-cta pad rv">
+      <span class="m m2">Direct all inquiries to</span>
+      <a class="ft-mail" href="mailto:faisalarip10@gmail.com"><span class="u">faisalarip10<wbr><span class="at">@</span>gmail.com</span></a>
+    </div>
+    <div class="ft-grid rv" style="--d:80">
+      <a href="mailto:faisalarip10@gmail.com">
+        <span class="k">Email <svg class="arr" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5 M3 1.5h5.5V7"/></svg></span>
+        <span class="v">faisalarip10@gmail.com</span>
+      </a>
+      <a href="tel:+6285791101337">
+        <span class="k">Telephone <svg class="arr" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5 M3 1.5h5.5V7"/></svg></span>
+        <span class="v">+62 857-9110-1337</span>
+      </a>
+      <a href="https://github.com/faisalarip" rel="noopener" target="_blank">
+        <span class="k">GitHub <svg class="arr" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5 M3 1.5h5.5V7"/></svg></span>
+        <span class="v">github.com/faisalarip</span>
+      </a>
+      <a href="https://www.linkedin.com/in/faisalarif/" rel="noopener" target="_blank">
+        <span class="k">LinkedIn <svg class="arr" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5 M3 1.5h5.5V7"/></svg></span>
+        <span class="v">linkedin.com/in/faisalarif</span>
+      </a>
+      <a href="https://wa.me/6285791101337" rel="noopener" target="_blank">
+        <span class="k">WhatsApp <svg class="arr" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5 M3 1.5h5.5V7"/></svg></span>
+        <span class="v">wa.me/6285791101337</span>
+      </a>
+      <div class="cell">
+        <span class="k">Location</span>
+        <span class="v">Jakarta, Indonesia</span>
+      </div>
+      <div class="cell">
+        <span class="k">Role</span>
+        <span class="v">Experienced iOS Engineer</span>
+      </div>
+      <div class="cell">
+        <span class="k">Status</span>
+        <span class="v">Tuntun Sekuritas — Present</span>
+      </div>
+    </div>
+    <div class="ft-bottom pad">
+      <span class="m">© 2026 Faisal Nur Arif</span>
+      <span class="m m2 colo">Colophon — Set in Archivo &amp; Spline Sans Mono on a 12-column grid; 1px ink hairlines; one HTML file, no frameworks</span>
+      <span class="m end">— End of report</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.rv,.rvw');
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in');});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:0.05});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+
+</body>
 </html>
