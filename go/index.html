@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Short marketing hand-off for Inspire Creativity.
+     Usage: https://faisalarip.github.io/go?s=m&c=post-slug
+     Short source codes: m=medium, x=x, yt=youtube, w=web (default).
+     Installed users deep-link into the app with UTM attribution;
+     everyone else lands on the App Store after ~1.2s.
+     TODO: add the ASC provider token for per-post store attribution:
+     storeURL = ".../apple-store/id6778075297?pt=YOUR_PT&ct=" + src+"_"+c + "&mt=8" -->
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Inspire Creativity</title>
+<style>
+  body{background:#0a0a0c;color:#fff;font-family:-apple-system,system-ui,sans-serif;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;
+       height:100vh;margin:0;gap:12px}
+  p{opacity:.6;font-size:14px;margin:0}
+  a{color:#FF6B4A;font-size:14px}
+</style>
+</head><body>
+<p>Opening Inspire Creativity…</p>
+<a href="https://apps.apple.com/app/id6778075297">Get it on the App Store</a>
+<script>
+  var q = new URLSearchParams(location.search);
+  var codes = { m: "medium", x: "x", yt: "youtube", w: "web" };
+  var raw = (q.get("s") || q.get("src") || "w").replace(/[^a-z0-9_-]/gi, "");
+  var src = codes[raw] || raw;
+  var c = (q.get("c") || "none").replace(/[^a-z0-9_-]/gi, "");
+  var appURL = "inspirecreativity://open?utm_source=" + src +
+               "&utm_medium=referral&utm_campaign=" + c;
+  var storeURL = "https://apps.apple.com/app/id6778075297";
+  var t = setTimeout(function () { location.href = storeURL; }, 1200);
+  window.addEventListener("pagehide", function () { clearTimeout(t); });
+  location.href = appURL;
+</script></body></html>
